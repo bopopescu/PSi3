@@ -17,7 +17,7 @@ class ZainteresowaniaList(generics.ListCreateAPIView):
    def post(self, request, format=None):
       serializer = ZainteresowaniaSerializer(data=request.data)
       if serializer.is_valid():
-         serializer.save(owner=self.request.user)
+         serializer.save()
          return Response(serializer.data, status=status.HTTP_201_CREATED)
       return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -38,7 +38,7 @@ class Dane_uzytkownikaList(generics.ListCreateAPIView):
    def post(self, request, format=None):
       serializer = Dane_uzytkownikaSerializer(data=request.data)
       if serializer.is_valid():
-         serializer.save(owner=self.request.user)
+         serializer.save()
          return Response(serializer.data, status=status.HTTP_201_CREATED)
       return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -60,7 +60,7 @@ class ZnajomiList(generics.ListCreateAPIView):
    def post(self, request, format=None):
       serializer = ZnajomiSerializer(data=request.data)
       if serializer.is_valid():
-         serializer.save(owner=self.request.user)
+         serializer.save()
          return Response(serializer.data, status=status.HTTP_201_CREATED)
       return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -82,7 +82,7 @@ class Znajomi_has_zainteresowania_uzytkownikList(generics.ListCreateAPIView):
    def post(self, request, format=None):
       serializer = Znajomi_has_zainteresowania_uzytkownikSerializer(data=request.data)
       if serializer.is_valid():
-         serializer.save(owner=self.request.user)
+         serializer.save()
          return Response(serializer.data, status=status.HTTP_201_CREATED)
       return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
